@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context="com.jiedu.project.lovefamily.activity.AboutVersionActivity">
+
+    <LinearLayout
+        android:background="#FFAF08"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/x30"
+            android:layout_height="@dimen/y30"
+            android:paddingLeft="@dimen/x15"
+            android:paddingTop="@dimen/x8"
+            android:paddingBottom="@dimen/y8"
+            android:src="@drawable/back_mark"
+            android:layout_gravity="center_vertical"
+
+            />
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/x20"
+            android:text="关于"
+            />
+
+
+    </LinearLayout>
+
+
+        <WebView
+            android:layout_below="@+id/about"
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></WebView>
+
+<!--
+
+
+        <LinearLayout
+            android:layout_below="@+id/about"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/version"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                android:text="当前版本号:@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>-->
+
+
+
+</LinearLayout>

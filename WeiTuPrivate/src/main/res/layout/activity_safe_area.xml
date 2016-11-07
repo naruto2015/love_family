@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jiedu.project.lovefamily.activity.SafeAreaActivity">
+    <RelativeLayout
+        android:background="#FFAF08"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize">
+
+        <TextView
+            android:id="@+id/title_safe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="安全区域设置"
+            android:textColor="#fff"
+            android:textSize="@dimen/x20" />
+
+        <ImageView
+            android:id="@+id/safe_back"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/y40"
+            android:padding="@dimen/x13"
+            android:src="@drawable/back_mark"
+            android:textColor="#fff"
+            android:layout_centerVertical="true"
+            />
+        <ImageView
+            android:id="@+id/save_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/wancheng"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"/>
+    </RelativeLayout>
+    <!--@dimen/y11   ndroid:layout_height="@dimen/y128"-->
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/safe_area_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/radio_space"
+        android:layout_below="@id/safe_back"/>
+
+    <com.jiedu.project.lovefamily.myview.MyBaiduMapIcon
+        android:id="@+id/safe_mybaiduIcon"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/address_edit"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="@dimen/y40"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_edit_edit"
+            android:hint="  输入你想查找的位置"
+            android:layout_margin="@dimen/x10"
+            />
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y30"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/white03"
+            android:background="@drawable/bg_save_search"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/x10"
+            />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/radio_space"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:background="#e7e7e4"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/safe_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y35"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:maxLength="20"
+            android:background="@drawable/bg_edit_edit"
+            android:hint="@string/title" />
+        <Button
+            android:id="@+id/down"
+            android:layout_width="@dimen/x34"
+            android:layout_height="@dimen/y28"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/safe_set_down"
+            />
+        <com.jiedu.project.lovefamily.myview.SafeView
+            android:id="@+id/safe_view"
+            android:layout_below="@id/safe_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y50"
+            />
+        <!--<Button-->
+            <!--android:id="@+id/save_set"-->
+            <!--android:layout_width="@dimen/x88"-->
+            <!--android:layout_height="@dimen/y26"-->
+            <!--android:layout_below="@id/safe_view"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="@dimen/y13"-->
+            <!--android:background="@drawable/bg_edit_edit"-->
+            <!--android:text="@string/submit"-->
+            <!--/>-->
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/up"
+        android:layout_width="@dimen/x34"
+        android:layout_height="@dimen/y28"
+        android:layout_gravity="bottom|right"
+        android:visibility="gone"
+        android:background="@drawable/safe_set_up"
+
+        />
+</FrameLayout>
+
+
+
+
+
+</LinearLayout>

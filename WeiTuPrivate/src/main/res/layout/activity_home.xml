@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mdrawerlayout"
+    android:fitsSystemWindows="true">
+
+    <FrameLayout
+        android:id="@+id/fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       />
+
+    <LinearLayout
+        android:id="@+id/drawerView"
+        android:gravity="left"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/slidingbackgound"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/presonal"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@mipmap/touxiang1" />
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_toRightOf="@+id/civ"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@mipmap/huiyuan" />
+            <TextView
+                android:id="@+id/username"
+                android:textColor="#FFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="用户名"
+                android:layout_alignTop="@+id/iv"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:textColor="#FFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/username"
+                android:text="有效期仅剩下3天"
+                android:layout_toRightOf="@+id/civ"
+                android:layout_marginLeft="10dp"
+                />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lv_navigation"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+           />
+        <Button
+            android:id="@+id/cancellation"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_margin="30dp"
+            android:layout_gravity="center_horizontal"
+            android:text="退出登录"
+            style="@style/textStyle"
+            android:background="@drawable/bg_save_search"/>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

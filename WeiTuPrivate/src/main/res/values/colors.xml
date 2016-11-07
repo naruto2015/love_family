@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFAF08</color>
+    <color name="colorPrimaryDark">#FFAF08</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_not_online">#A9AAAA</color>
+    <color name="online">#FFAF08</color>
+    <color name="calling_center_bg">#e4e4e4</color>
+    <color name="calling_bottom_bg">#2e2e2e</color>
+    <color name="calling_bottom_bg_click">#38a53c</color>
+    <color name="bg_main">#efefef</color>
+    <color name="lightgray">#D3D3D3</color>
+    <color name="tx_hangup_checked">#00d200</color>
+    <color name="calling_mute">#787878</color>
+    <color name="tx_mute_checked">#787878</color>
+    <color name="calling_speaker">#00d400</color>
+    <color name="tx_speaker_checked">#00d200</color>
+</resources>

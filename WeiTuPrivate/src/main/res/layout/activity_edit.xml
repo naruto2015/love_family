@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFAF08"
+    tools:context="com.jiedu.project.lovefamily.activity.EditActivity">
+
+    <TextView
+        android:id="@+id/title_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y38"
+        android:background="#49B754"
+        android:gravity="center"
+        android:text="@string/edit"
+        android:textColor="#fff"
+        android:textSize="@dimen/x15" />
+
+    <ImageView
+        android:id="@+id/edit_back"
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/y40"
+        android:padding="@dimen/x13"
+        android:src="@drawable/back_mark"
+        android:textColor="#fff" />
+
+    <ScrollView
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@id/title_edit"
+        >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+android:background="#fff"
+    >
+
+    <!--<ImageView
+        android:id="@+id/head"
+        android:layout_width="@dimen/x70"
+        android:layout_height="@dimen/y70"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y14"
+        android:src="@drawable/default_head" />-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/head"
+        android:layout_width="@dimen/x70"
+        android:layout_height="@dimen/y70"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y14"
+        android:src="@drawable/default_head" />
+
+    <RelativeLayout
+        android:id="@+id/edit_layout"
+        android:layout_width="@dimen/x241"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/head"
+        android:layout_marginTop="@dimen/y23"
+        android:background="@drawable/bg_edit_add_layout">
+
+        <RelativeLayout
+            android:id="@+id/user_phone"
+            style="@style/edit_layout_style">
+
+            <ImageView
+                android:id="@+id/myview_edit_icon"
+                android:src="@drawable/phone"
+                style="@style/edit_icon_style" />
+
+            <EditText
+                android:id="@+id/phone"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:editable="false"
+                android:focusable="false"
+                style="@style/edit_edit_style"
+                android:background="#fff"
+                android:layout_toRightOf="@id/myview_edit_icon"
+                android:hint="@string/hint_username" />
+
+            <ImageView
+                android:id="@+id/img_call"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/phone"
+                android:src="@drawable/phone_qq"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <TextView
+                style="@style/line_text_style" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/user_name"
+            style="@style/edit_layout_style"
+            android:layout_below="@id/user_phone">
+
+            <ImageView
+                android:id="@+id/myview_edit_name_icon"
+                android:src="@drawable/name"
+                style="@style/edit_icon_style" />
+
+            <EditText
+                android:maxLength="6"
+                android:id="@+id/myview_name_edit"
+                style="@style/edit_edit_style"
+                android:layout_toRightOf="@id/myview_edit_name_icon"
+                android:hint="@string/set_name" />
+
+            <TextView
+                style="@style/line_text_style" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/user_brithday"
+            style="@style/edit_layout_style"
+            android:layout_below="@id/user_name">
+
+            <ImageView
+                android:id="@+id/myview_edit_brithday_icon"
+                android:src="@drawable/birthday"
+                style="@style/edit_icon_style" />
+
+            <TextView
+                android:id="@+id/myview_brithday_edit"
+                style="@style/edit_edit_style"
+                android:layout_toRightOf="@id/myview_edit_brithday_icon"
+                android:inputType="date"
+                android:text="1991-1-1"
+                android:gravity="center_vertical"
+                android:hint="@string/set_brithday" />
+
+
+            <TextView
+                style="@style/line_text_style" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sex_choose_layout"
+            style="@style/edit_layout_style"
+            android:layout_below="@id/user_brithday">
+
+            <ImageView
+                android:id="@+id/edit_sex_icon"
+                android:src="@drawable/groupe"
+                style="@style/edit_icon_style" />
+
+            <RadioGroup
+                android:id="@+id/sex_group"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/edit_sex_icon"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/sex_man"
+                    android:layout_width="@dimen/x60"
+                    android:textColor="#A8A8A8"
+                    android:layout_height="fill_parent"
+                    android:button="@drawable/edit_radio_button"
+                    android:checked="true"
+                    android:paddingLeft="@dimen/x4"
+                    android:text="@string/sex_man" />
+
+                <RadioButton
+                    android:id="@+id/sex_woman"
+                    android:textColor="#A8A8A8"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/x23"
+                    android:paddingLeft="@dimen/x4"
+                    android:button="@drawable/edit_radio_button"
+                    android:text="@string/sex_woman" />
+            </RadioGroup>
+
+            <TextView
+                style="@style/line_text_style" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/edit_address_choose"
+            android:layout_width="@dimen/x240"
+            android:layout_height="@dimen/y90"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/sex_choose_layout">
+
+            <ImageView
+                android:layout_marginTop="45dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/address_icon"
+                style="@style/edit_icon_style"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/address"
+                />
+
+            <Button
+                android:id="@+id/province"
+                android:layout_width="@dimen/x58"
+                android:layout_height="@dimen/y19"
+                android:layout_marginLeft="@dimen/x43"
+                android:layout_marginTop="@dimen/y11"
+                android:visibility="gone"
+                android:background="@drawable/down"
+             />
+
+            <Button
+                android:id="@+id/city"
+                android:layout_width="@dimen/x58"
+                android:layout_height="@dimen/y19"
+                android:layout_marginLeft="@dimen/x4"
+                android:layout_marginTop="@dimen/y11"
+                android:visibility="gone"
+                android:layout_toRightOf="@id/province"
+                android:background="@drawable/down"></Button>
+
+            <Button
+                android:id="@+id/area"
+
+                android:visibility="gone"
+                android:layout_width="@dimen/x58"
+                android:layout_height="@dimen/y19"
+                android:layout_marginLeft="@dimen/x4"
+                android:layout_marginTop="@dimen/y11"
+                android:layout_toRightOf="@id/city"
+                android:background="@drawable/down"></Button>
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="@dimen/x157"
+                android:layout_height="@dimen/y70"
+                android:paddingLeft="@dimen/x11"
+                android:paddingTop="@dimen/y11"
+                android:layout_toRightOf="@id/address_icon"
+                android:gravity="top"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_edit_edit"
+                android:hint="@string/hint_address" />
+            <TextView
+                style="@style/line_text_style"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/user_phone_style_layout"
+            style="@style/edit_layout_style"
+            android:visibility="gone"
+            android:layout_below="@id/edit_address_choose">
+
+            <ImageView
+                android:id="@+id/phone_icon"
+                style="@style/edit_icon_style"
+                android:src="@drawable/phone_style" />
+
+            <Button
+                android:id="@+id/phone_style"
+                style="@style/edit_edit_style"
+                android:layout_toRightOf="@id/phone_icon"
+                android:gravity="left|center_vertical"
+                android:text="@string/phote_style" />
+
+            <ImageView
+                android:layout_width="@dimen/x11"
+                android:layout_height="@dimen/y8"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x184"
+                android:src="@drawable/down_mark" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/save_changes"
+        android:layout_width="@dimen/x150"
+        android:layout_height="@dimen/y30"
+        android:layout_below="@id/edit_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y32"
+        android:layout_marginBottom="@dimen/y20"
+        android:textColor="#fff"
+        android:background="@drawable/bg_save_button"
+        android:text="@string/save_change" />
+
+
+</RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

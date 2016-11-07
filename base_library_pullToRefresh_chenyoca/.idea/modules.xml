@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../MyApplication.iml" filepath="$PROJECT_DIR$/../MyApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WeiTuPrivate/WeiTuPrivate.iml" filepath="$PROJECT_DIR$/../WeiTuPrivate/WeiTuPrivate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base_library_pullToRefresh_chenyoca.iml" filepath="$PROJECT_DIR$/base_library_pullToRefresh_chenyoca.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../circleimageview/circleimageview.iml" filepath="$PROJECT_DIR$/../circleimageview/circleimageview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../libzxing/libzxing.iml" filepath="$PROJECT_DIR$/../libzxing/libzxing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../wheel/wheel.iml" filepath="$PROJECT_DIR$/../wheel/wheel.iml" />
+    </modules>
+  </component>
+</project>

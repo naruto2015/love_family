@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+       >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/personalinfor">
+        <ImageView
+            android:id="@+id/huiyuan"
+            android:layout_width="@dimen/x30"
+            android:layout_height="@dimen/y30"
+            android:paddingLeft="@dimen/x15"
+            android:paddingTop="@dimen/x10"
+            android:paddingBottom="@dimen/y8"
+            android:src="@drawable/back_mark"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="?android:actionBarSize"
+            android:text="开通会员"
+            android:textColor="#FFF"
+            android:gravity="center"
+            android:textSize="@dimen/x20"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/touxiang2"
+            android:layout_gravity="center_horizontal|bottom"
+            app:civ_border_width="6dp"
+            app:civ_border_color="#fff"
+            />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户姓名"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"/>
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y35"
+            android:background="#FFAF08"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/baibiankuang"
+                android:text="会员用户"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="体验用户"
+               />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/biankuang"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y35"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/biankuang"
+                android:text="成员上限6人"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/biankuang"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="成员上限3人"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y35"
+            android:background="@drawable/biankuang"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/biankuang"
+                android:text="会员期间无有效期"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="有效期15天"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+<!--<RelativeLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:background="@drawable/biankuang">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/tequan"-->
+        <!--android:background="#FFAF08"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_width="@dimen/x240"-->
+        <!--android:layout_height="@dimen/y40"-->
+        <!--android:text="会员用户"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:gravity="left|center_vertical"-->
+        <!--style="@style/textStyle_huiyuan"/>-->
+    <!--<TextView-->
+        <!--android:id="@+id/tiyanuser"-->
+        <!--android:background="#FFAF08"-->
+        <!--android:layout_width="@dimen/x240"-->
+        <!--android:layout_height="@dimen/y40"-->
+        <!--android:text="体验用户"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:gravity="right|center_vertical"-->
+        <!--style="@style/textStyle_huiyuan"/>-->
+    <!--<TextView-->
+        <!--android:layout_below="@+id/tequan"-->
+        <!--android:id="@+id/renshu"-->
+        <!--android:background="@drawable/biankuang"-->
+        <!--android:layout_alignLeft="@+id/tequan"-->
+        <!--android:layout_width="@dimen/x240"-->
+        <!--android:layout_height="@dimen/y40"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textColor="#999999"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:text="添加成员人数可以增加到6人，体验账户为3人"/>-->
+    <!--<TextView-->
+        <!--android:layout_below="@+id/renshu"-->
+        <!--android:layout_alignLeft="@id/renshu"-->
+        <!--android:layout_width="@dimen/x240"-->
+        <!--android:layout_height="@dimen/y40"-->
+        <!--android:textColor="#999999"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:text="使用没有时间限制，体验账户为15天"/>-->
+
+
+<!--</RelativeLayout>-->
+RelativeLayout
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="开通会员"
+    android:background="#FFAF08"
+    android:textColor="#FFF"
+    android:layout_gravity="center"
+    android:layout_marginTop="20dp"/>
+
+
+
+
+
+
+</LinearLayout>

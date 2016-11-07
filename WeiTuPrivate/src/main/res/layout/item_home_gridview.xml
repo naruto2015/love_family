@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="Orientation">
+
+
+   <!-- <ImageView
+        android:id="@+id/photo"
+        android:layout_width="@dimen/x60"
+        android:layout_height="@dimen/y60"
+        android:layout_marginTop="@dimen/y17"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        />-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/photo"
+        android:layout_width="@dimen/x60"
+        android:layout_height="@dimen/y60"
+        android:layout_marginTop="@dimen/y17"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/y15"
+        android:layout_below="@id/photo"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+    android:layout_marginTop="@dimen/y9"
+        android:text="@string/backlogin"
+        android:textSize="@dimen/x13" />
+
+    <TextView
+        android:id="@+id/statue"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/y13"
+        android:layout_below="@id/name"
+        android:layout_marginTop="@dimen/y4"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#00ff51"
+        android:text="@string/backlogin"
+        android:textSize="@dimen/x11" />
+</RelativeLayout>

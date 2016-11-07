@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/y38"
+        android:orientation="horizontal"
+        android:background="#49B754"
+        >
+        <ImageView
+            android:id="@+id/user_photo"
+            android:layout_width="@dimen/x43"
+            android:layout_height="@dimen/y43"
+            android:layout_marginLeft="@dimen/x15"
+            android:src="@drawable/help_logo"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/x13"
+            android:text="@string/app_name"
+            />
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y36"
+            android:padding="@dimen/x9"
+            android:src="@drawable/share"
+            android:layout_gravity="center_vertical"
+            />
+    </LinearLayout>
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+        android:id="@+id/home_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:gravity="center"
+        />
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="?android:actionBarSize"
+        android:orientation="horizontal"
+        android:background="#FFAF08"
+        >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/x30"
+            android:layout_height="@dimen/y30"
+            android:paddingLeft="@dimen/x15"
+            android:paddingTop="@dimen/x8"
+            android:paddingBottom="@dimen/y8"
+            android:src="@drawable/back_mark"
+            android:layout_gravity="center_vertical"
+            />
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/x20"
+            android:text="@string/monitor"
+            />
+        <ImageView
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y36"
+            android:padding="@dimen/x9"
+            android:layout_gravity="center_vertical"
+            />
+    </LinearLayout>
+<LinearLayout
+
+    android:id="@+id/edit_code_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x38"
+    android:layout_below="@id/title_layout"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    android:background="#fff"
+    >
+<TextView
+    android:layout_width="@dimen/x75"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:text="@string/code_edit"
+    android:visibility="gone"
+    android:layout_marginLeft="@dimen/x8"
+    />
+   <EditText
+       android:id="@+id/invitation_code"
+       android:layout_width="@dimen/x143"
+       android:layout_height="@dimen/y23"
+       android:visibility="gone"
+
+       android:background="@drawable/bg_edit_edit"
+       />
+<Button
+    android:id="@+id/submit"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:text="@string/submit"
+    android:visibility="gone"
+    android:textColor="#b7b0b7"
+    android:background="#00ffffff"
+    />
+</LinearLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/relay"
+        android:layout_below="@id/title_layout"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="31dp">
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_user"
+            android:text="您的位置正在被共享给以下用户："
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_below="@+id/tv_user"
+            android:background="#E4E4E5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    </RelativeLayout>
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/code_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:layout_below="@id/relay"
+        >
+
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+<TextView
+    android:id="@+id/no_data"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textColor="#f00"
+    android:layout_marginTop="@dimen/y100"
+    android:textSize="@dimen/x15"
+    android:text="没有监控关系"
+    />
+</RelativeLayout>

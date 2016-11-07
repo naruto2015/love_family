@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:background="@drawable/personalinfor"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            >
+            <ImageView
+                android:id="@+id/personal_back"
+                android:layout_width="@dimen/x30"
+                android:layout_height="@dimen/y30"
+                android:paddingLeft="@dimen/x15"
+                android:paddingTop="@dimen/x8"
+                android:paddingBottom="@dimen/y8"
+                android:src="@drawable/back_mark"
+               android:layout_centerVertical="true"
+
+                />
+            <TextView
+                android:layout_toRightOf="@+id/back"
+                android:layout_alignTop="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="@dimen/x20"
+                android:text="设置"
+                android:layout_centerInParent="true"
+                />
+            <ImageView
+                android:id="@+id/save_changes"
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:padding="@dimen/x10"
+                android:src="@mipmap/wancheng"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_centerVertical="true"
+
+                />
+
+        </RelativeLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/head"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/y70"
+           android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/y14"
+            android:src="@drawable/default_head" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击修改头像"
+            android:textSize="@dimen/x13"
+            android:textColor="#FFF"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="手机："
+            android:textSize="@dimen/x18"/>
+        <EditText
+            android:id="@+id/phone"
+            android:text="手机号"
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@null"
+
+            />
+        <ImageView
+            android:id="@+id/img_call"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/phone"
+            android:padding="6dp"
+            android:src="@mipmap/cylb2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <TextView
+        style="@style/line_text_style" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="昵称："
+            android:textSize="@dimen/x18"/>
+        <EditText
+            android:id="@+id/myview_name_edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:hint="昵称"
+            android:background="@null"/>
+    </LinearLayout>
+    <TextView
+        style="@style/line_text_style" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="性别："
+            android:textSize="@dimen/x18"/>
+
+        <!--<TextView-->
+            <!--android:id="@+id/sex_man"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:drawableLeft="@mipmap/xingbie1"-->
+            <!--android:textColor="@color/tv_seletor"-->
+            <!--android:text="男"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/sex_woman"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:drawableLeft="@mipmap/xingbie2"-->
+            <!--android:textColor="@color/tv_seletor"-->
+            <!--android:text="女"/>-->
+        <RadioGroup
+            android:id="@+id/sex_group"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/edit_sex_icon"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/sex_man"
+                android:layout_width="@dimen/x60"
+                android:layout_height="fill_parent"
+                android:button="@mipmap/xingbie1"
+                android:checked="true"
+                android:paddingLeft="@dimen/x4"
+                android:text="@string/sex_man" />
+
+            <RadioButton
+                android:id="@+id/sex_woman"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/x23"
+                android:paddingLeft="@dimen/x4"
+                android:button="@mipmap/xingbie2"
+                android:text="@string/sex_woman" />
+        </RadioGroup>
+
+    </LinearLayout>
+    <TextView
+        style="@style/line_text_style" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="生日："
+            android:textSize="@dimen/x18"/>
+        <TextView
+            android:id="@+id/myview_brithday_edit"
+            android:inputType="date"
+            android:text="1991-1-1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:hint="@string/set_brithday" />
+
+    </LinearLayout>
+    <TextView
+        style="@style/line_text_style" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/textStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="地址："
+            android:textSize="@dimen/x18"/>
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@null"/>
+    </LinearLayout>
+    <TextView
+        style="@style/line_text_style" />
+    <Button
+        android:id="@+id/phone_style"
+        style="@style/edit_edit_style"
+        android:visibility="gone"
+        android:layout_toRightOf="@id/phone_icon"
+        android:gravity="left|center_vertical"
+        android:text="@string/phote_style" />
+</LinearLayout>

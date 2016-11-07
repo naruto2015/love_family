@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#49B754"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/y38"
+        android:orientation="horizontal"
+        android:background="#49B754"
+        >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/x28"
+            android:layout_height="@dimen/y28"
+            android:paddingLeft="@dimen/x15"
+            android:paddingTop="@dimen/x8"
+            android:paddingBottom="@dimen/y8"
+            android:src="@drawable/back_mark"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/x13"
+            android:text="话费托收"
+            />
+        <ImageView
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y36"
+            android:padding="@dimen/x9"
+            android:layout_gravity="center_vertical"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/title_layout"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_marginRight="3dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="支付号码为非电信号,不能支付！请输入电信号码,继续支付."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:id="@+id/phone"
+            android:hint="请输入电信号码"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/linearlayout"
+            android:layout_width="280dp"
+            android:layout_height="40dp" />
+
+        <RelativeLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_width="280dp"
+            android:layout_height="40dp">
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_centerHorizontal="true"
+                android:hint="请输入验证码"
+                android:background="@drawable/linearlayout"
+                android:layout_width="280dp"
+                android:layout_height="40dp" />
+
+
+            <TextView
+                android:id="@+id/getCode"
+                android:gravity="center"
+                android:text="获取验证码"
+                android:textColor="#fff"
+                android:layout_alignParentRight="true"
+                android:background="#49B754"
+                android:layout_width="100dp"
+                android:layout_height="40dp" />
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/pay"
+        android:textColor="#fff"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#49B754"
+        android:text="确定支付"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+</RelativeLayout>

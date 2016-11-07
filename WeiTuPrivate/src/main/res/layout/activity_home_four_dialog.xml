@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00ffffff"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/popup_back"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="fill_parent" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:background="#50747463"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+        <TextView
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y34"
+            android:gravity="center"
+            android:text="@string/edit"
+            android:textColor="#0b0b0b"
+            android:layout_marginLeft="@dimen/x4"
+            android:layout_marginRight="@dimen/x4"
+            android:textSize="@dimen/x11" />
+
+        <View
+            android:background="#50747463"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+
+        <TextView
+            android:id="@+id/set_safe_area"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y34"
+            android:layout_marginLeft="@dimen/x4"
+            android:layout_marginRight="@dimen/x4"
+            android:layout_marginTop="2px"
+            android:gravity="center"
+            android:text="@string/set_safe_area"
+            android:textColor="#0b0b0b"
+            android:textSize="@dimen/x11" />
+        <View
+            android:background="#50747463"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+
+        <TextView
+            android:id="@+id/get_location"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y34"
+            android:layout_marginLeft="@dimen/x4"
+            android:layout_marginRight="@dimen/x4"
+            android:layout_marginTop="2px"
+            android:gravity="center"
+            android:text="@string/get_location"
+            android:textColor="#0b0b0b"
+            android:textSize="@dimen/x11" />
+
+        <View
+            android:background="#50747463"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y34"
+            android:layout_marginLeft="@dimen/x4"
+            android:layout_marginRight="@dimen/x4"
+            android:layout_marginTop="2px"
+            android:gravity="center"
+            android:text="@string/delete"
+            android:textColor="#0b0b0b"
+            android:textSize="@dimen/x11" />
+    </LinearLayout>
+
+
+</LinearLayout>

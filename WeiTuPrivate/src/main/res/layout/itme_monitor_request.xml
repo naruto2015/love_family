@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_height="@dimen/y30">
+<TextView
+    android:textSize="20sp"
+    android:id="@+id/name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="13611516375"
+    />
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/x20"
+        android:layout_marginRight="@dimen/x10"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        />
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x10"
+        android:layout_marginRight="@dimen/x20"
+        android:text="@string/cancel"
+        />
+</LinearLayout>

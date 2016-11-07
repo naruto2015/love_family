@@ -1,0 +1,3 @@
+include ':WeiTuPrivate', ':circleimageview', ':libzxing', ':swipebackhelper', ':okhttputils', ':slidingmenu'
+include ':wheel'
+include ':base_library_pullToRefresh_chenyoca'

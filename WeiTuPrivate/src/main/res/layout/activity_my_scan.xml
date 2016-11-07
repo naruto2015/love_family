@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.jiedu.project.lovefamily.activity.MyScanActivity">
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:background="#FFAF08"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/scan_back"
+                android:layout_width="@dimen/x30"
+                android:layout_height="@dimen/y30"
+                android:paddingLeft="@dimen/x15"
+                android:paddingTop="@dimen/x8"
+                android:paddingBottom="@dimen/y8"
+                android:src="@drawable/back_mark"
+                android:layout_gravity="center_vertical"
+                />
+            <TextView
+                android:layout_toRightOf="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_centerInParent="true"
+                android:textColor="#fff"
+                android:textSize="@dimen/x20"
+                android:text="我的二维码"
+                />
+
+        </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/img_code"
+            android:layout_gravity="center"
+            android:src="@mipmap/erweima"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/saowo"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal|bottom"/>
+
+    </FrameLayout>
+    </LinearLayout>

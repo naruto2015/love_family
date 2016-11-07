@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tv_bianji"
+        android:gravity="center_horizontal"
+        android:drawableTop="@drawable/bianji"
+        android:text="编辑"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_dingwei"
+        android:gravity="center_horizontal"
+        android:drawableTop="@drawable/dingwei"
+        android:text="定位查询"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_safe"
+        android:gravity="center_horizontal"
+        android:drawableTop="@drawable/shezhi"
+        android:text="设置安全区"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_del"
+        android:gravity="center_horizontal"
+        android:drawableTop="@drawable/del"
+        android:text="删除"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

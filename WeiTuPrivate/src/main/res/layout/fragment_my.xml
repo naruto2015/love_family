@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:id="@+id/title_layout"
+    android:layout_width="match_parent"
+    android:background="#49B754"
+    android:layout_height="@dimen/y135">
+
+<!--<ImageView
+    android:id="@+id/head_img"
+    android:layout_width="@dimen/x56"
+    android:layout_height="@dimen/y56"
+    android:layout_marginLeft="@dimen/x13"
+    android:src="@drawable/default_head"
+    android:layout_centerVertical="true"
+    />
+    -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/head_img"
+        android:layout_width="@dimen/x56"
+        android:layout_height="@dimen/y56"
+        android:layout_marginLeft="@dimen/x13"
+        android:src="@drawable/default_head"
+        android:layout_centerVertical="true" />
+<TextView
+    android:id="@+id/name"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/y15"
+    android:layout_marginTop="@dimen/y54"
+    android:layout_marginLeft="@dimen/x13"
+    android:layout_toRightOf="@id/head_img"
+    android:textColor="#fff"
+    android:textSize="@dimen/x13"
+    android:text="我"
+    />
+<TextView
+    android:id="@+id/phone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=""
+    android:gravity="center"
+    android:drawableLeft="@drawable/phone_img_test"
+    android:layout_marginTop="@dimen/y4"
+    android:layout_below="@id/name"
+    android:layout_alignLeft="@id/name"
+    />
+<!--<ImageView
+    android:id="@+id/go"
+    android:layout_width="80px"
+    android:layout_height="80px"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="10dp"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:src="@drawable/go"
+    />-->
+
+    <TextView
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textColor="#fff"
+        android:text=">"
+        android:id="@+id/go"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/code_relay"
+        android:layout_below="@id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="90.0px">
+        <TextView
+            android:id="@+id/mycode"
+            android:layout_width="match_parent"
+            android:layout_height="90.0px"
+            android:background="#fff"
+            android:text="我的二维码"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x15"
+
+            />
+
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_below="@+id/code_relay"
+        android:background="#E4E4E5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+
+    <RelativeLayout
+        android:id="@+id/rela"
+        android:layout_below="@id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/user_statue"
+            android:layout_width="match_parent"
+            android:layout_height="90.0px"
+            android:background="#fff"
+            android:text="@string/user_statue"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x15"
+
+            ></TextView>
+
+        <TextView
+            android:layout_marginRight="20sp"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:id="@+id/tv_userState"
+            android:text="体验用户@"
+            android:layout_width="wrap_content"
+            android:layout_height="90.0px" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_below="@+id/rela"
+        android:background="#E4E4E5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+
+    <TextView
+        android:layout_below="@id/line2"
+        android:id="@+id/monitor_list"
+        android:layout_width="match_parent"
+        android:layout_height="90.0px"
+        android:background="#fff"
+        android:text="@string/monitor"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x15"
+        android:drawableBottom="@drawable/bg_line"
+        ></TextView>
+
+
+    <View
+        android:id="@+id/line3"
+        android:layout_below="@+id/monitor_list"
+        android:background="#E4E4E5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+
+   <!-- <TextView
+        android:visibility="gone"
+        android:id="@+id/site_place"
+        android:layout_width="wrap_content"
+        android:layout_height="90.0px"
+        android:background="#fff"
+        android:text="设置"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x15"
+        android:layout_below="@id/line3"
+        android:drawableBottom="@drawable/bg_line" />-->
+
+    <TextView
+        android:id="@+id/center_message"
+        android:layout_width="wrap_content"
+        android:layout_height="90.0px"
+        android:background="#fff"
+        android:text="消息中心"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x15"
+        android:layout_below="@id/line3"
+         />
+
+
+    <RelativeLayout
+        android:id="@+id/msg_center_relay"
+        android:background="#fff"
+        android:layout_below="@id/line3"
+        android:layout_toRightOf="@+id/center_message"
+        android:layout_width="match_parent"
+        android:layout_height="90.0px">
+
+       <!-- <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#E53935"
+            android:layout_width="8dp"
+            android:layout_height="8dp" />-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/mc"
+            android:src="#E53935"
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:id="@+id/line4"
+        android:layout_below="@+id/center_message"
+        android:background="#E4E4E5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+
+
+    <TextView
+        android:id="@+id/pay"
+        android:layout_width="match_parent"
+        android:layout_height="90.0px"
+        android:background="#fff"
+        android:text="@string/pay"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x15"
+        android:layout_below="@id/line4"
+
+        ></TextView>
+
+    <View
+        android:id="@+id/line5"
+        android:layout_below="@+id/pay"
+        android:background="#E4E4E5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="90.0px"
+        android:background="#fff"
+        android:text="@string/about"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x15"
+        android:layout_below="@id/line5"
+
+        ></TextView>
+
+
+    <View
+        android:id="@+id/line6"
+        android:layout_below="@+id/about"
+        android:background="#E4E4E5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+
+    <Button
+        android:id="@+id/cancellation"
+        android:layout_width="match_parent"
+        android:layout_marginRight="@dimen/x13"
+        android:layout_marginLeft="@dimen/x13"
+        android:layout_height="@dimen/y30"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/y55"
+        android:text="@string/exit"
+        android:background="#f00"
+        />
+</RelativeLayout>

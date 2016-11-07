@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jude.swipbackhelper.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:descendantFocusability="blocksDescendants"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="85dp">
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="85dp">
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:background="#FFAF08"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:layout_height="85dp">
+        <!-- android:src="#E53935"红色-->
+        <!--android:src="#49B754"-->
+        <!--android:visibility="gone"-->
+        <CheckBox
+            android:id="@+id/msg_check"
+            android:drawableTop="@drawable/check_msg_selector"
+            android:layout_marginTop="15dp"
+            android:button="@null"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:textColor="#FFAF08"
+            android:layout_marginTop="10dp"
+            android:id="@+id/areaname"
+            android:paddingLeft="5dp"
+            android:text="安全区域名称"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:background="#4000"
+            android:layout_marginTop="6dp"
+            android:id="@+id/msg_friend_count"
+            android:text="10"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:padding="1dp"
+            android:textColor="#fff"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:layout_width="20dp"
+            android:layout_height="18dp" />
+        <TextView
+            android:textColor="#FFAF08"
+            android:id="@+id/fujin"
+            android:text="附近500米"
+            android:layout_marginTop="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/areaname"
+            android:id="@+id/area_detail"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="11111"
+            android:drawableLeft="@mipmap/dinwei1"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#3000"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</com.jude.swipbackhelper.SwipeLayout>
+

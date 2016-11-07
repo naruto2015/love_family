@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="android-async-http-loader">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../WeiTuPrivate/libs/android-async-http-loader.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

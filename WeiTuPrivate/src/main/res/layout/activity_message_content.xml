@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#49B754"
+    tools:context="com.jiedu.project.lovefamily.activity.MessageContentActivity">
+
+    <RelativeLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y38">
+            <TextView
+                android:id="@+id/title_add"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y38"
+                android:background="#FFAF08"
+                android:gravity="center"
+                android:text="消息"
+                android:textColor="#fff"
+                android:textSize="@dimen/x15" />
+
+            <ImageView
+                android:layout_alignParentLeft="true"
+                android:id="@+id/back"
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:padding="@dimen/x13"
+                android:src="@drawable/back_mark"
+                android:textColor="#fff" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/second"
+            android:layout_below="@id/top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y46">
+            <TextView
+                android:id="@+id/message_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="消息标题"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFAF08"
+                android:textSize="@dimen/x16" />
+
+            <TextView
+                android:id="@+id/message_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x13"
+                android:src="@drawable/back_mark"
+                android:layout_marginRight="3dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="2016-8-2"
+                android:textColor="#000" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#3000" />
+        </RelativeLayout>
+        <TextView
+            android:textSize="18sp"
+            android:layout_below="@+id/second"
+            android:id="@+id/message_content"
+            android:text="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

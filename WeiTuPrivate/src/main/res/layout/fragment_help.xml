@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00ffffff"
+
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="?android:actionBarSize"
+        android:orientation="horizontal"
+        android:background="#FFAF08"
+        >
+        <ImageView
+            android:id="@+id/user_photo"
+            android:layout_width="@dimen/x30"
+            android:layout_height="@dimen/y30"
+            android:paddingLeft="@dimen/x15"
+            android:paddingTop="@dimen/x8"
+            android:paddingBottom="@dimen/y8"
+            android:src="@drawable/back_mark"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/x20"
+            android:text="@string/help"
+            />
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y36"
+            android:padding="@dimen/x9"
+
+            android:layout_gravity="center_vertical"
+            />
+    </LinearLayout>
+<WebView
+    android:id="@+id/web"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00ffffff"
+    >
+
+</WebView>
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jiedu.project.lovefamily.activity.LocationActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="?android:actionBarSize"
+    android:background="#FFAF08"
+    >
+    <ImageView
+        android:id="@+id/location_back"
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/y40"
+        android:padding="@dimen/x13"
+        android:layout_centerVertical="true"
+        android:src="@drawable/back_mark"
+        android:textColor="#fff"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="?android:actionBarSize"
+        android:text="@string/get_location"
+        android:id="@+id/title_location"
+        android:textColor="#fff"
+        android:textSize="@dimen/x20"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        />
+
+</RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="right|bottom"
+        >
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></com.baidu.mapapi.map.MapView>
+        <com.jiedu.project.lovefamily.myview.MyBaiduMapIcon
+            android:id="@+id/mybaiduicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <Button
+            android:id="@+id/safe_area_manager"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textColor="#FFF"
+            android:layout_marginBottom="@dimen/y50"
+            android:padding="5dp"
+            android:textSize="@dimen/x20"
+            android:background="@drawable/bg_save_button"
+            android:text="安全区域管理"/>
+
+    </FrameLayout>
+
+
+</LinearLayout>

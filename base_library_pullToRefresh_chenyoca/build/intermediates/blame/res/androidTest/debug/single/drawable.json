@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/gaodesong/Documents/code_workspace/android_studio_workplace/jiedu/MyApplication/base_library_pullToRefresh_chenyoca/build/intermediates/res/merged/androidTest/debug/drawable/indicator_bg_top.xml",
+        "source": "/Users/gaodesong/Documents/code_workspace/android_studio_workplace/jiedu/MyApplication/base_library_pullToRefresh_chenyoca/build/intermediates/bundles/debug/res/drawable/indicator_bg_top.xml"
+    },
+    {
+        "merged": "/Users/gaodesong/Documents/code_workspace/android_studio_workplace/jiedu/MyApplication/base_library_pullToRefresh_chenyoca/build/intermediates/res/merged/androidTest/debug/drawable/indicator_bg_bottom.xml",
+        "source": "/Users/gaodesong/Documents/code_workspace/android_studio_workplace/jiedu/MyApplication/base_library_pullToRefresh_chenyoca/build/intermediates/bundles/debug/res/drawable/indicator_bg_bottom.xml"
+    }
+]

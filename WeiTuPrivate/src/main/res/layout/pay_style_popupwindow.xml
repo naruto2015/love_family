@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:background="#50bcabab"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/bg_gray"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y97"
+    android:background="@drawable/bg_pay_style"
+    android:orientation="horizontal"
+    >
+    <Button
+        android:id="@+id/pay_weixin"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/y97"
+        android:layout_weight="1"
+        android:background="#00ffffff"
+        />
+    <Button
+        android:id="@+id/pay_zhifubao"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/y97"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        />
+</LinearLayout>
+
+</LinearLayout>

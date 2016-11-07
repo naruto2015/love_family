@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jiedu.project.lovefamily.activity.SafeListActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#FFAF08"
+        android:layout_height="?android:actionBarSize">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/y40"
+            android:padding="@dimen/x13"
+            android:src="@drawable/back_mark"
+            android:textColor="#fff" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="安全区域列表"
+            android:textColor="#fff"
+            android:textSize="@dimen/x20"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/listview_area"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        ></ListView>
+    <Button
+        android:id="@+id/add_safearea"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#FFF"
+        android:layout_marginBottom="@dimen/y50"
+        android:padding="5dp"
+        android:textSize="@dimen/x20"
+        android:background="@drawable/bg_save_button"
+        android:text="添加安全区域"/>
+
+
+</FrameLayout>
+
+
+
+
+
+    <TextView
+        android:id="@+id/prompt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="@dimen/x15"
+        android:text="点击右上角添加安全区域"
+        android:visibility="gone"
+        android:layout_below="@id/title"
+        />
+</LinearLayout>

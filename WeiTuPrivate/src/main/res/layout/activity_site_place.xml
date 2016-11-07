@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#49B754"
+    tools:context="com.jiedu.project.lovefamily.activity.SitePlaceActivity">
+
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y38">
+        <TextView
+            android:id="@+id/title_add"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y38"
+            android:background="#49B754"
+            android:gravity="center"
+            android:text="位置设置"
+            android:textColor="#fff"
+            android:textSize="@dimen/x15" />
+
+        <ImageView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/add_back"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/y40"
+            android:padding="@dimen/x13"
+            android:src="@drawable/back_mark"
+            android:textColor="#fff" />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:gravity="center"
+            android:text="是否上传位置"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <Switch
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:id="@+id/open"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/per_upload"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:gravity="center"
+            android:text="上传频率"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/myupload"
+            android:gravity="center"
+             android:layout_toLeftOf="@+id/gg"
+            android:text="1"
+            android:layout_width="40dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center"
+            android:id="@+id/gg"
+            android:layout_alignParentRight="true"
+            android:text="分钟"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+
+    </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

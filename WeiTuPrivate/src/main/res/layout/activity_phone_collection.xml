@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jiedu.project.lovefamily.activity.PhoneCollectionActivity">
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/y38"
+        android:orientation="horizontal"
+        android:background="#49B754"
+        >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/x28"
+            android:layout_height="@dimen/y28"
+            android:paddingLeft="@dimen/x15"
+            android:paddingTop="@dimen/x8"
+            android:paddingBottom="@dimen/y8"
+            android:src="@drawable/back_mark"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/x13"
+            android:text="话费托收"
+            />
+        <ImageView
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/y36"
+            android:padding="@dimen/x9"
+            android:layout_gravity="center_vertical"
+            />
+    </LinearLayout>
+
+     <LinearLayout
+         android:layout_marginRight="20dp"
+         android:layout_marginLeft="20dp"
+         android:layout_marginTop="50dp"
+         android:layout_below="@+id/title_layout"
+         android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/linearLayout">
+
+         <EditText
+             android:id="@+id/phone"
+             android:background="@drawable/linearlayout"
+             android:hint="请输入电信号"
+             android:layout_width="match_parent"
+             android:layout_height="40dp"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentRight="true"
+             android:layout_alignParentEnd="true"
+              />
+
+         <TextView
+             android:id="@+id/getCode"
+
+             android:textSize="20sp"
+             android:layout_marginTop="20dp"
+             android:gravity="center"
+             android:layout_alignParentRight="true"
+             android:text="获取验证码"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent" />
+
+             <EditText
+                 android:id="@+id/et_code"
+                 android:layout_marginTop="20dp"
+                 android:background="@drawable/linearlayout"
+                 android:hint="请输入验证码"
+                 android:layout_width="250dp"
+                 android:layout_height="40dp"
+                 />
+
+
+     </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/pay"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"
+        android:background="#49B754"
+        android:text="支付"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+</RelativeLayout>

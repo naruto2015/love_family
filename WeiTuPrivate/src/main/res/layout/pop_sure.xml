@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_port_detail_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black_shade" >
+
+    <LinearLayout
+        android:id="@+id/home_port_lisetview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp" 
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/delete_all"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/pop_textview_uncheck"
+            android:gravity="center"
+            android:text="全部删除"
+            android:textColor="#FFAF08"
+            android:textSize="@dimen/x18"/>
+        <TextView
+            android:id="@+id/israded"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/pop_textview"
+            android:gravity="center"
+            android:text="设为已读"
+            android:textColor="#fff"
+            android:textSize="@dimen/x18" />
+        <TextView
+            android:id="@+id/cancel_pop"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/pop_textview_uncheck"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#FFAF08"
+            android:textSize="@dimen/x18" />
+
+        
+    </LinearLayout>
+
+</RelativeLayout>

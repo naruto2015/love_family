@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="640px"
+    android:layout_height="120px">
+
+    <ImageView
+        android:id="@+id/myview_edit_icon"
+        android:layout_width="66px"
+        android:layout_height="66px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="40px"
+        android:layout_marginTop="38px" />
+
+    <EditText
+        android:id="@+id/myview_edit"
+        android:layout_width="418px"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="28px"
+        android:layout_marginTop="38px"
+        android:layout_toRightOf="@id/myview_edit_icon" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000" />
+</RelativeLayout>

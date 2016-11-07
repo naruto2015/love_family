@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#49B754"
+    tools:context="com.jiedu.project.lovefamily.activity.MonitorRequestDialog">
+    <RelativeLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y38"
+        android:background="#49B754"
+        android:gravity="center"
+        android:text="@string/monitor_request_list"
+        android:textColor="#fff"
+        android:textSize="@dimen/x15" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/y40"
+        android:padding="@dimen/x13"
+        android:src="@drawable/back_mark"
+        android:textColor="#fff" />
+
+<ListView
+    android:id="@+id/monitor_request_list"
+    android:layout_below="@+id/title"
+    android:layout_centerVertical="true"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="wrap_content">
+
+</ListView>
+    </RelativeLayout>
+</RelativeLayout>
