@@ -1,33 +1,29 @@
 package com.jiedu.project.lovefamily.activity;
 
-import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
+import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.jiedu.project.lovefamily.R;
-import com.jiedu.project.lovefamily.application.MyApplication;
 import com.jiedu.project.lovefamily.bean.TCallRecordInfo;
-import com.jiedu.project.lovefamily.bean.TContactInfo;
-import com.jiedu.project.lovefamily.config.SysConfig;
-import com.jiedu.project.lovefamily.db.SQLiteManager;
-import com.jiedu.project.lovefamily.service.ReloginService;
-import com.jiedu.project.lovefamily.utils.CommFunc;
 
-import java.util.Calendar;
-import java.util.UUID;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import jni.sip.Call;
-import rtc.sdk.common.NetWorkUtil;
+import jni.util.Utils;
+import rtc.sdk.common.RtcConst;
+import rtc.sdk.core.RtcRules;
+import rtc.sdk.iface.Connection;
+import rtc.sdk.iface.ConnectionListener;
+import rtc.sdk.iface.Device;
+import rtc.sdk.iface.RtcClient;
 
 /**
  * Created by Administrator on 2016/10/24.
@@ -42,12 +38,12 @@ public class VedioActivity extends BaseActivity{
     private ImageView button;
     private EditText editText,editText2;
     private   String userid;
+    private Button cancle_phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vedio);
 
-        SysConfig.getInstance().setIsLoginByBtn(false);
         initview();
         initData();
     }
@@ -55,6 +51,9 @@ public class VedioActivity extends BaseActivity{
         button= (ImageView) findViewById(R.id.button);
         editText= (EditText) findViewById(R.id.edit_vedio);
         editText2= (EditText) findViewById(R.id.edit_vedio2);
+        layoutlocal = (LinearLayout) findViewById(R.id.ll_local);
+        layoutremote = (LinearLayout) findViewById(R.id.ll_remote);
+        cancle_phone= (Button) findViewById(R.id.cancle_phone);
     }
 
     private void initData() {
@@ -63,16 +62,24 @@ public class VedioActivity extends BaseActivity{
          fromUser = intent.getStringExtra("fromuser");
         editText.setText(toUser);
         editText2.setText(fromUser);
-        CommFunc.PrintLog(5, "ContactCallDetailActivity", "initData");
-        TContactInfo info = null;
-        if (fromUser.equals(SysConfig.userid)) {
-            info = SQLiteManager.getInstance().getContactInfoByNumber(toUser);
-        }else {
-            info = SQLiteManager.getInstance().getContactInfoByNumber(fromUser);
-        }
-        CommFunc.PrintLog(5, "ContactCallDetailActivity", "initData  info:"+info);
-    }
 
+    }
+    public void onBtnHangup(View viw) {
+        if (mCall!=null) {
+            mCall.disconnect();
+            Utils.PrintLog(5, LOGTAG, "onBtnHangup timerDur"+mCall.getCallDuration());
+            mCall = null;
+            setVideoSurfaceVisibility(View.INVISIBLE);
+//            setBtnText(R.id.bt_Call,"Call");
+        }
+//        setStatusText("call hangup ");
+    }
+    void setVideoSurfaceVisibility(int visible) {
+        if(mvLocal!=null)
+            mvLocal.setVisibility(visible);
+        if(mvRemote!=null)
+            mvRemote.setVisibility(visible);
+    }
 
 
 
@@ -80,63 +87,152 @@ public class VedioActivity extends BaseActivity{
      * 视频呼叫
      * @param view
      */
-    public void onVideo(View view) {
-        if (checkCall(toUser)) {
-            String callRecordId = UUID.randomUUID().toString();
-            saveCallRecordInfo(callRecordId, toUser, Call.CT_AudioVideo);
-            Intent intent = new Intent(this,CallingActivity.class);
-            AlarmManager am = (AlarmManager) MyApplication.getInstance().getSystemService(Context.ALARM_SERVICE);
-            intent.putExtra("callNumber",toUser);
-            intent.putExtra("inCall", false);
-            intent.putExtra("isVideo", true);
-            intent.putExtra("callRecordId", callRecordId);
-            PendingIntent pendingIntent = PendingIntent.getActivity(MyApplication.getInstance(), 2, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-            long time = Calendar.getInstance().getTimeInMillis();
-            CommFunc.PrintLog(5, LOGTAG, "pendingIntent time:"+time);
-            am.set(AlarmManager.RTC_WAKEUP,100, pendingIntent);
-        }
-    }
+    RtcClient mClt;
+    Device mAcc = null;  //reg
+    boolean mIncoming = false;
+    int mCT = RtcConst.CallType_A_V;
 
-    /**
-     * 判断号码是否满足呼叫条件
-     * TODO需要更改
-     * @param numberString
-     * @return
-     */
-    private boolean checkCall(String numberString){
-        if (numberString == null || numberString.equals("")) {
-            CommFunc.DisplayToast(this,R.string._calling_number_null);
-            return false;
-        } else {
-            if (checkNet()) {
-                if (numberString.equals(userid)) {
-                    CommFunc.DisplayToast(this,R.string._calling_cannot_dial_self);
-                    return false;
-                }
-                return true;
-            }else {
-                return false;
+    public void onBtnCall(View view) {
+        Utils.PrintLog(5,"onBtnCall", "onBtnCall(): transtype"+ RtcConst.TransType);
+        if (mAcc==null)
+            return;
+        if (mCall==null) {
+            mIncoming = false;
+            try {
+                //;transport=tls
+                String remoteuri = "";
+                remoteuri = RtcRules.UserToRemoteUri_new(toUser, RtcConst.UEType_Any);
+                JSONObject jinfo = new JSONObject();
+                jinfo.put(RtcConst.kCallRemoteUri,remoteuri);
+                jinfo.put(RtcConst.kCallInfo,"逍遙神龍--->"); //opt
+                jinfo.put(RtcConst.kCallType,mCT);
+                mCall = mAcc.connect(jinfo.toString(),mCListener);
+//                setBtnText(R.id.bt_Call,"Calling");
+                //IM test
+                //mAcc.sendIm(remoteuri, RtcConst.ImText, "聊天吧");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } else { // acceptcall
+            if (mIncoming) {
+                mIncoming = false;
+                mCall.accept(mCT); //视频来电可以选择仅音频接听
+//                setBtnText(R.id.bt_Call,"Calling");
+                Utils.PrintLog(5,LOGTAG, "onBtnCall mIncoming " +
+                        "accept(mCT)");
+//                setStatusText("ConnectionListener:onConnected");
             }
         }
+       // setBtnText(R.id.bt_Call,"Calling");
+
     }
 
-    /**
-     * 入库操作
-     */
-    private void saveCallRecordInfo(String callRecordId, String callNumber, int callType) {
-        TCallRecordInfo info = new TCallRecordInfo();
-        info.setCallRecordId(callRecordId);
-        info.setDate(CommFunc.getStartDate());
-        info.setStartTime(CommFunc.getStartTime());
-        info.setEndTime("");
-        info.setTotalTime("");
-        String userid = MyApplication.getInstance().getUserID();
-        info.setFromUser(userid); // TODO 需要更改
-        info.setToUser(callNumber);
-        info.setType(callType);
-        info.setResult(TCallRecordInfo.CALL_RESULT_SUCCESS);
-        info.setDirection(TCallRecordInfo.CALL_DIRECTION_OUT);
-        SQLiteManager.getInstance().saveCallRecordInfo(info, true);
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Utils.PrintLog(5,LOGTAG, "onDestroy()");
+        if (mCall!=null) {
+            mCall.disconnect();
+            mCall = null;
+        }
+        if(layoutremote!=null)
+            layoutremote.removeAllViews();
+        if(layoutlocal!=null)
+            layoutlocal.removeAllViews();
+        mvLocal = null;
+        mvRemote = null;
+
+        if(mAcc!=null) {
+            mAcc.release();
+            mAcc = null;
+        }
+        if(mClt!=null) {
+            mClt.release();
+            mClt = null;
+        }
+    }
+
+    Connection mCall;
+
+    /** The m c listener. */
+    ConnectionListener mCListener = new ConnectionListener() {
+        @Override
+        public void onConnecting() {
+//            setStatusText("ConnectionListener:onConnecting");
+        }
+        @Override
+        public void onConnected() {
+//            setStatusText("ConnectionListener:onConnected");
+        }
+        @Override
+        public void onDisconnected(int code) {
+//            setStatusText("ConnectionListener:onDisconnect,code="+code);
+            Utils.PrintLog(5, LOGTAG, "onDisconnected timerDur"+mCall.getCallDuration());
+            mCall = null;
+
+        }
+        @Override
+        public void onVideo() {
+//            setStatusText("ConnectionListener:onVideo");
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    initVideoViews();
+                    mCall.buildVideo(mvRemote);
+//                    setVideoSurfaceVisibility(View.VISIBLE);
+                }
+            });
+        }
+        @Override
+        public void onNetStatus(int msg, String info) {
+            // TODO Auto-generated method stub
+        }
+    };
+
+    private void initVideoViews() {
+
+        if (mvLocal != null)
+            return;
+        if(mCall != null)
+            mvLocal = (SurfaceView)mCall.createVideoView(true, this, true);
+        mvLocal.setVisibility(View.INVISIBLE);
+        layoutlocal.addView(mvLocal);
+        mvLocal.setKeepScreenOn(true);
+        mvLocal.setZOrderMediaOverlay(true);
+        mvLocal.setZOrderOnTop(true);
+
+        if (mvRemote != null)
+            return;
+        if(mCall != null)
+            mvRemote = (SurfaceView)mCall.createVideoView(false, this, true);
+        mvRemote.setVisibility(View.INVISIBLE);
+        mvRemote.setKeepScreenOn(true);
+        mvRemote.setZOrderMediaOverlay(true);
+        mvRemote.setZOrderOnTop(true);
+        layoutremote.addView(mvRemote);
+
+
+    }
+
+    Handler mHandler = new Handler() {
+
+    };
+
+
+    SurfaceView mvLocal = null;
+    SurfaceView mvRemote = null;
+    LinearLayout layoutlocal;
+    LinearLayout layoutremote;
+
+    @Override
+    protected void onResume() {
+        // TODO Auto-generated method stub
+        if(layoutremote!=null) {
+            if(mCall!=null)
+                mCall.resetVideoViews();
+        }
+        super.onResume();
     }
 
     @Override

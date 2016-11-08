@@ -12,10 +12,36 @@
         android:id="@+id/edit_vedio2"/>
     <ImageView
         android:id="@+id/button"
-        android:onClick="onVideo"
+        android:onClick="onBtnCall"
         android:src="@drawable/btn_dialpad_video_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="视频通话"/>
+    <Button
+        android:id="@+id/cancle_phone"
+        android:onClick="onBtnHangup"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="挂断"/>
+    <LinearLayout
+        android:id="@+id/ll_video"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_local"
+            android:layout_width="144dp"
+            android:layout_height="176dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_remote"
+            android:orientation="horizontal"
+
+            android:layout_width="144dp"
+            android:layout_height="176dp" />
+    </LinearLayout>
 
 </LinearLayout>

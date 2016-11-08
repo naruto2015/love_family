@@ -3,7 +3,6 @@ package com.jiedu.project.lovefamily.activity;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.KeyEvent;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -11,9 +10,6 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.jiedu.project.lovefamily.R;
-import com.jiedu.project.lovefamily.config.SysConfig;
-import com.jiedu.project.lovefamily.tools.LocalActManager;
-import com.jiedu.project.lovefamily.utils.CommFunc;
 import com.jiedu.project.lovefamily.utils.SystemBarTintManager;
 import com.jude.swipbackhelper.SwipeBackHelper;
 
@@ -30,7 +26,6 @@ public class BaseActivity  extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LocalActManager.getInstance().addActivity(this);
         SwipeBackHelper.onCreate(this);
         SwipeBackHelper.getCurrentPage(this)
                 .setSwipeBackEnable(true)
@@ -97,7 +92,6 @@ public class BaseActivity  extends Activity{
     protected void onDestroy() {
         super.onDestroy();
         SwipeBackHelper.onDestroy(this);
-        LocalActManager.getInstance().removeActivity(this);
     }
 
 
@@ -111,24 +105,7 @@ public class BaseActivity  extends Activity{
                     .getWindowToken(), 0);
         }
     }
-    /**
-     * 网络检测
-     *
-     * @return
-     */
-    public boolean checkNet() {
-        if (NetWorkUtil.isNetConnect(this) == false) {
-            CommFunc.DisplayToast(this, R.string.net_cannot_use);
-            CommFunc.PrintLog(5, LOGTAG, "checkNet()  isNetConnect net_cannot_use ismLoginOK==false");
-            return false;
-        }
-//        if (!SysConfig.getInstance().ismLoginOK()) {
-//            CommFunc.DisplayToast(this, R.string.unLogin);
-//            CommFunc.PrintLog(5, LOGTAG, "checkNet() unLogin ismLoginOK==false");
-//            return false;
-//        }
-        return true;
-    }
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

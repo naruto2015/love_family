@@ -94,12 +94,6 @@
     </uses-permission>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
 
-    <service android:name="rtc.sdk.impl.SdkService" >
-        <intent-filter>=
-            <action android:name="rtc.sdk.service" />
-        </intent-filter>
-    </service>
-
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -118,6 +112,12 @@
         android:theme="@style/AppTheme"
         tools:replace="android:label">
 
+        <service android:name="rtc.sdk.impl.SdkService" >
+            <!--<intent-filter>-->
+                <!--<action android:name="rtc.sdk.service" />-->
+            <!--</intent-filter>-->
+        </service>
+
         <!--
             <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -128,10 +128,6 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="GTMFtChYgyxaHnNY9wzunHeMKXnhoW5N" />
 
-        <service
-            android:name=".service.ReloginService"
-            android:enabled="true"
-            android:persistent="true" />
 
         <service
             android:name="com.baidu.location.f"
@@ -279,7 +275,6 @@
         <activity android:name=".adapter.SettingActivity"/>
         <activity android:name=".activity.MessageClassifyActivity"/>
         <activity android:name=".activity.VedioActivity"/>
-        <activity android:name=".activity.CallingActivity"/>
     </application>
 
 </manifest>

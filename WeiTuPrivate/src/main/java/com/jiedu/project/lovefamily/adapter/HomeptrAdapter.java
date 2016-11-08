@@ -212,7 +212,7 @@ public class HomeptrAdapter extends BaseExpandableListAdapter {
         hide_shipin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MyApplication.getInstance().init();
+
                 Intent intent = new Intent(mContext, VedioActivity.class);
                 intent.putExtra("touser",list.get(i3).getPhone());
                 intent.putExtra("fromuser",SharedPreferencesUtil.getInfo(mContext, "phone"));
